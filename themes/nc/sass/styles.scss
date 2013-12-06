@@ -23,3 +23,40 @@
 /* SMACSS theme rules */
 /* @import "theme-A"; */
 /* @import "theme-B"; */
+
+/* Get resets */
+@import "compass/reset/utilities";
+
+body {
+    background-color: #fcfcfc;
+ }
+
+.front {
+    background: url("../images/Background-Image-Home.jpg") center 200px no-repeat; 
+    background-size: 100%;
+}
+
+#page {
+    width: 1000px;
+ }
+
+.header {
+  position: relative;  
+  height: 200px;
+}
+
+#navigation {
+  bottom: 0;
+  border-top: 1px solid #CCC;
+}
+
+#main {
+  
+  #video-box {   
+    height: 500px;
+  }
+}
+
+#footer {
+
+}
