@@ -104,7 +104,11 @@ regions[bottom]         = Page bottom
 regions[page_top]       = Page top
 regions[page_bottom]    = Page bottom
 
+;
+; Custom Regions
 
+regions[home_video]     = Home Video
+regions[home_cols]      = Home Columns
 
 ; Various page elements output by the theme can be toggled on and off. The
 ; "features" control which of these check boxes display on the

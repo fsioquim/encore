@@ -26,37 +26,269 @@
 
 /* Get resets */
 @import "compass/reset/utilities";
-
-body {
-    background-color: #fcfcfc;
- }
-
-.front {
-    background: url("../images/Background-Image-Home.jpg") center 200px no-repeat; 
-    background-size: 100%;
-}
-
-#page {
-    width: 1000px;
- }
-
-.header {
-  position: relative;  
-  height: 200px;
-}
-
-#navigation {
-  bottom: 0;
-  border-top: 1px solid #CCC;
-}
-
-#main {
-  
-  #video-box {   
-    height: 500px;
+   
+  body {
+    background: #f8f8f8   
   }
-}
+  
+  .front {
+    background: #f8f8f8 url("../images/Background-Image-Home.jpg") center 200px no-repeat; 
+    background-size: 1600px;
+  }
+  
+  #page {
+      width: 1000px;
+   }
+  
+  .header {
+    $zen-column-count: 2;
+    $zen-gutter-width: 0px;
+    @include zen-grid-container;
+    width: 100%;
+    position: relative;  
+    height: 200px;
+    
+    #logo_container {
+    @include zen-grid-item(1, 1);
+      
+      .header__logo {    
+        
+        .header__logo-image {
+          margin-top: 25px;
+          max-width: 277px;
+        }
+      }
+    }
+    
+    #phone {
+      @include zen-grid-item(1, 2);
+      text-align: right;
+      margin-top: 80px;
+      
+      .ico-phone {
+        background: url("../images/phone.png");
+        width: 27px;
+        height: 27px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 20px; 
+      }
+      
+      span {
+        font-weight: 700;
+        font-size: 1.6em;   
+        display: inline-block;
+        vertical-align: middle;   
+      }
+      
+      #local {
+        margin-right: 30px;      
+      }      
+      
+    }
+  }
+  
+  #navigation {
+    bottom: 0;
+    height: 68px;
+    border-top: 1px solid #CCC;
+    
+    #main-menu {
+          
+      ul {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+      }
+      
+      li {
+        font-size: 1.2em;
+        font-weight: 700;
+        display: table-cell;
+        text-align: center;
+        float: none;
+        width: 100%;
+        word-break: break-word;
+      }
+       
+    }
+  }
+  
+  .front #main {    
+    #video-box {  
+      margin-top: 70px;
+      height: 430px;
+      width: 975px;
+      background-color: #fff;
+      position: relative;  
+     @include box-shadow(rgba(0, 0, 0, 0.3) 0 1px 4px, rgba(0, 0, 0, 0.1) 0 0 40px inset);
+    
+      .vb-links {
+        float: right;
+        clear: right;
+        width: 259px;
+        height: 93px;
+        border: none;
+        margin-right: -25px;
+        background-color: transparent;
+      }
+    
+      .vb-video {
+        width: 700px;
+        height: 394px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
 
-#footer {
+      }
+    
+      #vb-voice {        
+        margin-top: 20px;
+        background: url("../images/voice.png") center top no-repeat; 
+      }
+    
+      #vb-voice:hover {        
+        background: url("../images/voice_r.png") center top no-repeat; 
+      }    
+    
+      #vb-bundles {        
+        margin-top: 10px;
+        background: url("../images/bundles.png") center top no-repeat; 
+      }
+    
+      #vb-bundles:hover {        
+        background: url("../images/bundles_r.png") center top no-repeat; 
+      } 
+    
+      #vb-lightspeed {     
+        margin-top: 10px;
+        background: url("../images/lightspeed.png") center top no-repeat; 
+      }
+    
+      #vb-lightspeed:hover {        
+        background: url("../images/lightspeed_r.png") center top no-repeat; 
+      } 
+    
+      #vb-metro {        
+        margin-top: 10px;
+        background: url("../images/metro.png") center top no-repeat; 
+      }
+    
+      #vb-metro:hover {        
+        background: url("../images/metro_r.png") center top no-repeat; 
+      } 
+    }
+  
+    #video-box:before,  #video-box:after {  
+      content:"";
+      position:absolute; 
+      z-index:-1;
+      @include box-shadow(rgba(0,0,0,0.8) 0 0 20px);
+      top:50%;
+      bottom:0;
+      left:60px;
+      right:60px;
+      -moz-border-radius:100px / 10px;
+      border-radius:200px / 10px;
+    }
+    
+   #content {
+    
+      h1 {
+        text-transform:uppercase;
+        border-bottom: 3px solid #cd212b;
+        color: #3c3c3c;
+        margin: 2em 0 0 0;
+        font-size: 3em;
+        width: 90%;
+      }
+    
+      article {
+        $zen-column-count: 2;
+        $zen-auto-include-item-base: true;
+        @include zen-grid-container;
+        font-size: 1.5em;
+        line-height: 1.5em;
+        text-align: left;
+        word-break: break-all;
+      
+        .field-name-field-body-1 {
+          @include zen-grid-item(1, 1);
+          padding-right: 50px;
+          @include hyphenation;
+      
+        }
+        .field-name-field-body-2 {
+          @include zen-grid-item(1, 2);  
+          padding-left: 50px;
+          @include hyphenation;
+        }
+      }
+    
+      .home-cols {
+        
+        .view-content {
+          $zen-column-count: 3;
+          @include zen-grid-container;
+          
+          
+          .views-row {
+          
+            article {
+              background-color: #fff;  
+              text-align: center;  
+              position: relative;
+            
+            
+                header {
+                  position: absolute;
+                  top: 80px;
+                  
+                  h2 {
+                    font-size: 1em;
+                  }
+                }
+          
+                .field-name-field-homepage-column-body {
+                  margin-top: 3em;
+                }
+            }
+          }
+        
+          .views-row-1 {
+            @include zen-grid-item(1, 1); 
+          
+            article {
+              margin-right: 30px;
+              position: relative;
+            }
+          }
+        
+          .views-row-2 {
+            @include zen-grid-item(1, 2); 
+          
+            article {
+              margin: 0 15px 0 15px;
+            }        
+          }
+        
+          .views-row-3 {
+            @include zen-grid-item(1, 3); 
+          
+            article {
+              margin-left: 30px;
+            }
+          }
+        
+        }
+      }
+    }
+  }
+  
+  #footer {
+  
+  }
 
-}
+
+
+

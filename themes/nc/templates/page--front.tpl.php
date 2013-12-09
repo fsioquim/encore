@@ -13,10 +13,12 @@
   <header class="header" id="header" role="banner">
 
     <?php if ($logo): ?>
+      <div id="logo_container">
       <a href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>" rel="home" class="header__logo" id="logo"><img src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" class="header__logo-image" /></a>
+      </div>
     <?php endif; ?>
 
-    <?php if ($site_name || $site_slogan): ?>
+    <?php /*if ($site_name || $site_slogan): ?>
       <div class="header__name-and-slogan" id="name-and-slogan">
         <?php if ($site_name): ?>
           <h1 class="header__site-name" id="site-name">
@@ -28,8 +30,12 @@
           <div class="header__site-slogan" id="site-slogan"><?php print $site_slogan; ?></div>
         <?php endif; ?>
       </div>
-    <?php endif; ?>
-
+    <?php endif; */?>
+    <div id="phone">
+      <i class="ico-phone"></i>
+      <span id="local">Local: 903-503-7000 </span>
+      <span id="toll">Toll-Free: 888-266-4836</span>    
+    </div>
     <div id="navigation">
 
       <?php if ($main_menu): ?>
@@ -62,7 +68,15 @@
 
   <div id="main">
     <div id="video-box">
-      test 123
+      <?php if ($page['home_video']): ?>
+        <div class="vb-video">
+          <?php print render($page['home_video']); ?>
+        </div> <!-- /.footer icons -->
+      <?php endif; ?>
+      <button id="vb-voice" class="vb-links"></button>
+      <button id="vb-bundles" class="vb-links"></button>
+      <button id="vb-lightspeed" class="vb-links"></button>
+      <button id="vb-metro" class="vb-links"></button>
     </div>
     <div id="content" class="column" role="main">
       <?php print render($page['highlighted']); ?>
@@ -80,7 +94,12 @@
         <ul class="action-links"><?php print render($action_links); ?></ul>
       <?php endif; ?>
       <?php print render($page['content']); ?>
-      <?php print $feed_icons; ?>
+      <?php print $feed_icons; ?>      
+      <?php if ($page['home_cols']): ?>
+        <div class="home-cols">
+          <?php print render($page['home_cols']); ?>
+        </div> <!-- /.footer icons -->
+      <?php endif; ?>
     </div>
 
 

@@ -135,6 +135,8 @@ body {
  * http://meyerweb.com/eric/thoughts/2007/06/11/who-ordered-the-link-states
  */
 a:link {
+  text-decoration: none;
+  color: #000;
 }
 a:visited {
 }
@@ -142,6 +144,8 @@ a:hover,
 a:focus {
 }
 a:active {
+  text-decoration: none;
+  color: #000;
 }
 
 /* Address `outline` inconsistency between Chrome and other browsers. */
@@ -542,4 +546,11 @@ table {
   /* Add vertical rhythm margins. */
   @include leader(1);
   @include trailer(1);
+}
+        
+/**
+ * Custom
+ */
+.block-title, .field-label {
+  display: none;
 }
